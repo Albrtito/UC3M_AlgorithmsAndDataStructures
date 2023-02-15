@@ -6,6 +6,8 @@ Implement a method to find out what position Josephus should sit in order to not
 killed. The solution should generalize for any number of jewish soldiers and any step.
 The solution should use a queue of integers (each soldier is represented with a number
 from 1 to n).
+Video explaining the concept for k = 1:
+https://www.youtube.com/watch?v=uCsD3ZGzMgE
 """
 """
 IDEA: 
