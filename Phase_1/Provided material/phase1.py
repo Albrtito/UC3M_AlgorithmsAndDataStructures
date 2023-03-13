@@ -3,33 +3,18 @@ from slistH import SNode
 
 import sys
 
+
 class SList2(SList):
 
-    
-    def delLargestSeq(self): 
-        #implement here your solution
+    def delLargestSeq(self):
+        # implement here your solution
 
         pass
-
-
-
-
-
-
-
-
 
     def fix_loop(self):
-        #implement here your solution
+        # implement here your solution
 
         pass
-		
-		
-
-
-
-
-
 
     def create_loop(self, position):
         # this method is used to force a loop in a singly linked list
@@ -48,41 +33,33 @@ class SList2(SList):
         start_node = current
         print(f"Creating a loop starting from {start_node.elem}")
         while current.next:
-            current = current.next        
+            current = current.next
         current.next = start_node
-		
-		
-	
-    def leftrightShift(self,left,n):
-        #implement here your solution
+
+    def leftrightShift(self, left, n):
+        # implement here your solution
 
         pass
 
 
+if __name__ == '__main__':
 
-
-
-
-
-
-if __name__=='__main__':
-
-    l=SList2()
-    print("list:",str(l))
-    print("len:",len(l))
+    l = SList2()
+    print("list:", str(l))
+    print("len:", len(l))
 
     for i in range(7):
-        l.addLast(i+1)
+        l.addLast(i + 1)
 
     print(l)
     print()
 
-    l=SList2()
-    print("list:",str(l))
-    print("len:",len(l))
+    l = SList2()
+    print("list:", str(l))
+    print("len:", len(l))
 
     for i in range(7):
-        l.addLast(i+1)
+        l.addLast(i + 1)
 
     print(l)
     print()
@@ -101,19 +78,15 @@ if __name__=='__main__':
     print()
     print()
 
-    
     l = SList2()
-    for i in [1,2,3,4,5]:        
+    for i in [1, 2, 3, 4, 5]:
         l.addLast(i)
     print(l.delLargestSeq())
 
-
-    l=SList2()
+    l = SList2()
     for i in range(7):
-         l.addLast(i+1)
+        l.addLast(i + 1)
 
     print(l)
     l.leftrightShift(False, 2)
     print(l)
-    
-    

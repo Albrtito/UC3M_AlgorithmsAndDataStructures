@@ -35,7 +35,7 @@ class Test(unittest.TestCase):
         """
         THIS CREATES A TIMEOUT ERROR
         # Create a loop on element 3: Using create_loop provided function:
-        self.test3.create_loop(3)
+        self.test3.create_loop(position = 3)
         """
         # Get the element index in which to create a loop.
         loop_index = 3
