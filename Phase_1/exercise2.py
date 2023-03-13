@@ -1,7 +1,11 @@
-import slistH
+from slistH import SList
+from slistH import SNode
+import unittest
+import random
+import time
 
 
-class dlist2(slistH):
+class Dlist2(SList):
 
     def fix_loop(self):
         """The purpose of this method is to detect loops in the list and
@@ -14,19 +18,17 @@ class dlist2(slistH):
         # Loop the list until we find the last node. It will reference NONE or another node we have already
         # passed
 
-        itnode = self.head
-        # This is not valid because i´m using list.
-        referenced_nodes = []
+        ITnode = self._head
+        while ITnode is not None:  # Check for the end of the list. If we get to an element that is
+            # None we know there
+            # is an end
+            ITcheck = self._head  # We start by Iterating a check variable.
+            while ITcheck is not ITnode:  # Check that the ITnode does not reference
+                # to a previous node. Check all previous elements to ITnode.
+                ITcheck = ITcheck.next  # Keep iterating the check until we reach the ITnode
+            # If the while stops we enter this if. If the while stopped
+            if ITcheck == ITnode.next:
+                return True
+            ITnode = ITnode.next
 
-        if itnode is None:  # Last node references None
-            return False
-        else:  # Loop: Reference to a node we have already passed:
-            itcheck = self.head
-            while itcheck is not itnode.next:# Check that the itnode does not reference to a previous node
-                itcheck = itcheck.next
-                #We change the check variable and check if that reference is the same as the itnode.next
-                if itcheck == itnode.next:
-                    return True
-
-                else:  # If there is loop
-                    return True
+        return False
