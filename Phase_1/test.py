@@ -17,7 +17,9 @@ class Test(unittest.TestCase):
             self.test2.addFirst(random.randint(0, 5))
 
         self.test2.create_loop(len(self.test2) - 1)
+
         """
+        THIS CREATES A TIMEOUT ERROR
         # Get the last element to create a loop:
         last_elem_2 = self.test2._head
         for i in range(len(self.test2) - 1):
@@ -30,13 +32,17 @@ class Test(unittest.TestCase):
         self.test3 = Dlist2()
         for i in range(5):
             self.test3.addFirst(random.randint(0, 5))
-
+        """
+        THIS CREATES A TIMEOUT ERROR
+        # Create a loop on element 3: Using create_loop provided function:
+        self.test3.create_loop(3)
+        """
         # Get the element index in which to create a loop.
         loop_index = 3
         loop_elem = self.test3._head
         for i in range(loop_index + 1):  # Because the stop is omitted we need to add 1
             loop_elem = loop_elem.next
-
+        
         # Get the last elem to create a loop:
         last_elem_3 = self.test3._head
         for i in range(len(self.test3) - 1):
