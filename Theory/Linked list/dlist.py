@@ -10,7 +10,6 @@ Original file is located at
 
 First, we must implement the class Node to store the nodes. In addition to the element and the reference to the next node, the class includes a reference, **prev**, to the previous node.
 """
-
 class DNode:
   def __init__(self, elem, next=None, prev=None ):
     self.elem = elem
@@ -27,7 +26,7 @@ class DList:
   def isEmpty(self):
     """Checks if the list is empty"""
     return self.head == None   
-  
+
   def __len__(self):
     return self.size
 
