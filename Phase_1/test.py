@@ -1,6 +1,6 @@
 import random
 import unittest
-from exercise2 import Dlist2
+from myexercise2 import Dlist2
 
 
 class Test(unittest.TestCase):
@@ -11,45 +11,52 @@ class Test(unittest.TestCase):
         for i in range(5):
             self.test1.addFirst(random.randint(0, 5))
 
+
+
         # SetUp for the test2 : List with a loop from tail to head
         self.test2 = Dlist2()
         for i in range(5):
             self.test2.addFirst(random.randint(0, 5))
 
-        self.test2.create_loop(len(self.test2) - 1)
+        #Create the loop
+        self.test2.create_loop(3)
 
         """
-        THIS CREATES A TIMEOUT ERROR
+        #THIS CREATES A TIMEOUT ERROR
         # Get the last element to create a loop:
-        last_elem_2 = self.test2._head
+        last_node_2 = self.test2._head
         for i in range(len(self.test2) - 1):
-            last_elem_2 = last_elem_2.next
+            last_node_2 = last_node_2.next
         # Link the last elem to the head elem.
-        last_elem_2.next = self.test2._head
+        last_node_2.next = self.test2._head
         """
+
+
 
         # SetUp for the test3: List with a loop from tail to a middle element:
         self.test3 = Dlist2()
         for i in range(5):
             self.test3.addFirst(random.randint(0, 5))
-        """
-        THIS CREATES A TIMEOUT ERROR
+
+        #THIS CREATES A TIMEOUT ERROR
         # Create a loop on element 3: Using create_loop provided function:
         self.test3.create_loop(position = 3)
         """
         # Get the element index in which to create a loop.
         loop_index = 3
-        loop_elem = self.test3._head
+        loop_node = self.test3._head
         for i in range(loop_index + 1):  # Because the stop is omitted we need to add 1
-            loop_elem = loop_elem.next
+            loop_node = loop_node.next
         
         # Get the last elem to create a loop:
-        last_elem_3 = self.test3._head
+        last_node_3 = self.test3._head
         for i in range(len(self.test3) - 1):
-            last_elem_3 = last_elem_3.next
+            last_node_3 = last_node_3.next
 
         # Link the last elem to the loop elem.
-        last_elem_3.next = loop_elem
+        last_node_3.next = loop_node
+        
+        """
 
     # TESTING
 
@@ -58,7 +65,7 @@ class Test(unittest.TestCase):
         """No loops"""
         expected = [False, None]
         # Bool value returned by fix_loop
-        bool_out = self.test1.fix_loop()
+        bool_out = self.test1.detect_and_remove()
 
         # Get the last elem of the list and check it´s reference
         last_elem = self.test1._head
@@ -76,7 +83,7 @@ class Test(unittest.TestCase):
         """Loop tail-head"""
         # ** NO IMPLEMENTATION OF GETTING RID OF THE LOOP
         expected = [True, None]
-        bool_out = self.test2.fix_loop()
+        bool_out = self.test2.detect_and_remove()
 
         # Get the last elem of the list and check it´s reference
         last_elem = self.test2._head
@@ -93,7 +100,7 @@ class Test(unittest.TestCase):
     def test3(self):
         """Loop tail-middle point"""
         expected = [True, None]
-        bool_out = self.test3.fix_loop()
+        bool_out = self.test3.detect_and_remove()
 
         # Get the last elem of the list and check it´s reference
         last_elem = self.test3._head

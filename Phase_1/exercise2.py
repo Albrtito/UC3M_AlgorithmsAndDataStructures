@@ -32,12 +32,15 @@ class Dlist2(SList):
             ITcheck = self._head  # We start by Iterating a check variable.
             while ITcheck is not ITnode:  # Check that the ITnode does not reference
                 # to a previous node. Check all previous elements to ITnode.
-                ITcheck = ITcheck.next  # Keep iterating the check until we reach the ITnode
+                #ITcheck = ITcheck.next  # Keep iterating the check until we reach the ITnode
 
-            if ITcheck == ITnode.next: # If the check node is the same as the reference of the ITnode we know the
-                # ITnode is creating a loop. We return True and break the loop (by setting it´s reference to None)
-                ITnode.next = None
-                return True
+                if ITcheck == ITnode.next: # If the check node is the same as the reference of the ITnode we know the
+                    # ITnode is creating a loop. We return True and break the loop (by setting it´s reference to None)
+                    ITnode.next = None
+                    return True
+                
+                ITcheck = ITcheck.next
+                
             ITnode = ITnode.next # Iteration of the first while
 
         return False
