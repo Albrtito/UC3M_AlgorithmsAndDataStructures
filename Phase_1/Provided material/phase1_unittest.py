@@ -123,17 +123,17 @@ class Test(unittest.TestCase):
     # TEST OF EXERCISE 3
 
     def test3_1(self):
-        """E3: Some case"""
+        """E3: List is empty"""
         # If the list ...
         ...
 
     def test3_1(self):
-        """E3: Some case"""
+        """E3: List has only one element"""
         # If the list  ...
         ...
 
     def test3_1(self):
-        """E3: Some case"""
+        """E3: List ..."""
         # If the list  ...
         ...
 
@@ -141,6 +141,7 @@ class Test(unittest.TestCase):
         """E3: Some case """
         # If the list  ...
         ...
+        """E3: List..."""
 
 
 if __name__ == "__main__":
