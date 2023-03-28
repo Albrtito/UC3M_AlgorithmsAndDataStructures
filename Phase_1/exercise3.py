@@ -1,7 +1,7 @@
-import slistH
+from slistH import SList
 
 
-class dlist2(slistH):
+class Slist2(SList):
     def leftrightShift(self, left, n):
         if left:
             node = self._head
@@ -22,6 +22,6 @@ class dlist2(slistH):
             lastnode = node.next  # Not needed it saves one iteration
             while lastnode.next is not None:  # Finds the last node of the list
                 lastnode = lastnode.next
-            lastnode.next = self._head  # Assignst to the .next of the last element the head of the sequence
+            lastnode.next = self._head  # Assign to the .next of the last element the head of the sequence
             self._head = node.next  # Assigns the new head of the list
             node.next = None  # Makes the last element's .next atribute None

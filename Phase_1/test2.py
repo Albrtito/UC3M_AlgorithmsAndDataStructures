@@ -1,24 +1,22 @@
 import random
 import unittest
-from myexercise2 import Dlist2
+from exercise2 import Slist2
 
 
 class Test(unittest.TestCase):
     # setup function
     def setUp(self):
         # SetUp for the test1 : List without loops
-        self.test1 = Dlist2()
+        self.test1 = Slist2()
         for i in range(5):
             self.test1.addFirst(random.randint(0, 5))
 
-
-
         # SetUp for the test2 : List with a loop from tail to head
-        self.test2 = Dlist2()
+        self.test2 = Slist2()
         for i in range(5):
             self.test2.addFirst(random.randint(0, 5))
 
-        #Create the loop
+        # Create the loop
         self.test2.create_loop(3)
 
         """
@@ -31,16 +29,14 @@ class Test(unittest.TestCase):
         last_node_2.next = self.test2._head
         """
 
-
-
         # SetUp for the test3: List with a loop from tail to a middle element:
-        self.test3 = Dlist2()
+        self.test3 = Slist2()
         for i in range(5):
             self.test3.addFirst(random.randint(0, 5))
 
-        #THIS CREATES A TIMEOUT ERROR
+        # THIS CREATES A TIMEOUT ERROR
         # Create a loop on element 3: Using create_loop provided function:
-        self.test3.create_loop(position = 3)
+        self.test3.create_loop(position=3)
         """
         # Get the element index in which to create a loop.
         loop_index = 3
@@ -64,7 +60,10 @@ class Test(unittest.TestCase):
     def test1(self):
         """No loops"""
         expected = [False, None]
+
         # Bool value returned by fix_loop
+        # change comment for election: detect_and_remove or fix_loop
+        # bool_out = self.test3.fix_loop()
         bool_out = self.test1.detect_and_remove()
 
         # Get the last elem of the list and check it´s reference
@@ -83,6 +82,8 @@ class Test(unittest.TestCase):
         """Loop tail-head"""
         # ** NO IMPLEMENTATION OF GETTING RID OF THE LOOP
         expected = [True, None]
+        # change comment for election: detect_and_remove or fix_loop
+        # bool_out = self.test3.fix_loop()
         bool_out = self.test2.detect_and_remove()
 
         # Get the last elem of the list and check it´s reference
@@ -100,6 +101,8 @@ class Test(unittest.TestCase):
     def test3(self):
         """Loop tail-middle point"""
         expected = [True, None]
+        # change comment for election: detect_and_remove or fix_loop
+        # bool_out = self.test3.fix_loop()
         bool_out = self.test3.detect_and_remove()
 
         # Get the last elem of the list and check it´s reference
