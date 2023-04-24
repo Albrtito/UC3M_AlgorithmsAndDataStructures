@@ -27,6 +27,12 @@ class Node:
         return other != None and self.elem == other.elem
         # return other!=None and self.elem==other.elem and self.left==other.left and self.right==other.right
 
+    def __str__(self):
+        return "Elem: " + str(self.elem)
+
+    def __repr__(self):
+        return "Elem: " + str(self.elem) + " Parent: " + str(self.parent)
+
 
 class BinaryTree:
 

@@ -2,7 +2,7 @@
 # Implementation of Binary Tree
 # A node only saves the references to its children
 
-from slistH import SList
+from TADLineales.slistH import SList
 
 
 class BinaryNode:
@@ -17,12 +17,9 @@ class BinaryNode:
         return other is not None and self.elem == other.elem and self.left == other.left and self.right == other.right
 
     def __str__(self):
-        if self.right is not None and self.left is not None:
-            return str(self.elem)+"// Left: " + str(self.left.elem) + " Right: " + str(self.right.elem)
-        else:
-            return str(self.elem)
-    def __repr__(self):
-        return self.__str__()
+        return str(self.elem)
+
+
 class BinaryTree:
     def __init__(self) -> None:
         """creates an empty binary tree
